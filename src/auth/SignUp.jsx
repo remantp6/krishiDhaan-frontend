@@ -60,7 +60,7 @@ const SignUp = () => {
               <Grid item>
                 <Link
                   to="/"
-                  className="text-blue-600 border-b border-blue-300 hover:border-blue-600"
+                  className="text-blue-400 border-b border-blue-200 hover:border-blue-500"
                 >
                   Already have an account? Sign in
                 </Link>

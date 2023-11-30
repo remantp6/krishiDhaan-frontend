@@ -58,7 +58,7 @@ const Login = () => {
               <Grid item xs={5}>
                 <Link
                   to="#"
-                  className="text-blue-600 border-b border-blue-300 hover:border-blue-600"
+                  className="text-blue-400 border-b border-blue-200 hover:border-blue-500"
                 >
                   Forgot password?
                 </Link>
@@ -66,7 +66,7 @@ const Login = () => {
               <Grid item xs={7}>
                 <Link
                   to="/auth/signUp"
-                  className="text-blue-600 border-b border-blue-300 hover:border-blue-600"
+                  className="text-blue-400 border-b border-blue-200 hover:border-blue-500"
                 >
                   Don't have an account? SignUp
                 </Link>
