@@ -7,13 +7,13 @@ import FormControlLabel from "@mui/material/FormControlLabel";
 import Checkbox from "@mui/material/Checkbox";
 import Button from "@mui/material/Button";
 import Grid from "@mui/material/Grid";
-import Link from "@mui/material/Link";
+import { Link } from "react-router-dom";
 
 const Login = () => {
   const handleSignIn = () => {};
   return (
     <>
-      <div class="flex flex-col justify-center items-center  h-screen">
+      <div className="flex flex-col justify-center items-center  h-screen">
         <Avatar
           alt="Travis Howard"
           src="https://imgs.search.brave.com/Q65UA21kSm1jTRqAYCFhO4oVDY9NE3oRUylQVa2XppY/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9jZG4u/cGl4YWJheS5jb20v/cGhvdG8vMjAyMC8w/OS8xOC8xNS8zMi9j/cm9wLTU1ODIxNDFf/XzM0MC5qcGc"
@@ -55,14 +55,20 @@ const Login = () => {
           </Button>
           <Box>
             <Grid container>
-              <Grid xs={5}>
-                <Link href="#" underline="always">
-                  {"Forgot password"}
+              <Grid item xs={5}>
+                <Link
+                  to="#"
+                  className="text-blue-600 border-b border-blue-300 hover:border-blue-600"
+                >
+                  Forgot password?
                 </Link>
               </Grid>
-              <Grid xs={7}>
-                <Link href="#" underline="always">
-                  {"Don't have an account? SignUp"}
+              <Grid item xs={7}>
+                <Link
+                  to="/auth/signUp"
+                  className="text-blue-600 border-b border-blue-300 hover:border-blue-600"
+                >
+                  Don't have an account? SignUp
                 </Link>
               </Grid>
             </Grid>
@@ -74,7 +80,7 @@ const Login = () => {
             sx={{ mt: 4, mb: 4 }}
           >
             {"Copyright © "}
-            <Link color="inherit" href="https://mui.com/">
+            <Link to="#" className="border-b border-gray-400">
               Your Website
             </Link>{" "}
             {new Date().getFullYear()}
