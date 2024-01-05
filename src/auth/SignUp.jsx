@@ -6,9 +6,21 @@ import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import Grid from "@mui/material/Grid";
 import { Link } from "react-router-dom";
+import SignUpSchema from "../validation-schemas/SignUpSchema";
+import { useFormik } from "formik";
 
 const SignUp = () => {
-  const handleSignUp = () => {};
+  const formik = useFormik({
+    initialValues: {
+      full_name: "",
+      email: "",
+      password: "",
+    },
+    validationSchema: SignUpSchema,
+    onSubmit: (values) => {
+      console.log(values);
+    },
+  });
 
   return (
     <>
@@ -31,28 +43,42 @@ const SignUp = () => {
           }}
           noValidate
           autoComplete="off"
+          onSubmit={formik.handleSubmit}
         >
-          <TextField id="outlined-basic" label="Full Name" variant="outlined" />
+          <TextField
+            id="outlined-basic"
+            label="Full Name"
+            variant="outlined"
+            name="full_name"
+            value={formik.values.full_name}
+            onChange={formik.handleChange}
+            error={formik.touched.full_name && Boolean(formik.errors.full_name)}
+            helperText={formik.touched.full_name && formik.errors.full_name}
+          />
           <TextField
             id="outlined-email-input"
             label="Email Address"
             type="email"
             autoComplete="email"
+            name="email"
+            value={formik.values.email}
+            onChange={formik.handleChange}
+            error={formik.touched.email && Boolean(formik.errors.email)}
+            helperText={formik.touched.email && formik.errors.email}
           />
           <TextField
             id="outlined-password-input"
             label="Password"
             type="password"
             autoComplete="current-password"
+            name="password"
+            value={formik.values.password}
+            onChange={formik.handleChange}
+            error={formik.touched.password && Boolean(formik.errors.password)}
+            helperText={formik.touched.password && formik.errors.password}
           />
 
-          <Button
-            type="submit"
-            fullWidth
-            variant="contained"
-            sx={{ my: 2 }}
-            onClick={handleSignUp}
-          >
+          <Button type="submit" fullWidth variant="contained" sx={{ my: 2 }}>
             Sign Up
           </Button>
           <Box>

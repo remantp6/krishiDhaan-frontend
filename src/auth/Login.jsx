@@ -1,4 +1,5 @@
 import React from "react";
+import { useFormik } from "formik";
 import Avatar from "@mui/material/Avatar";
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
@@ -8,9 +9,20 @@ import Checkbox from "@mui/material/Checkbox";
 import Button from "@mui/material/Button";
 import Grid from "@mui/material/Grid";
 import { Link } from "react-router-dom";
+import SignInSchema from "../validation-schemas/SignInSchema";
 
 const Login = () => {
-  const handleSignIn = () => {};
+  const formik = useFormik({
+    initialValues: {
+      username: "",
+      password: "",
+    },
+    validationSchema: SignInSchema,
+    onSubmit: (values) => {
+      console.log(values);
+    },
+  });
+
   return (
     <>
       <div className="flex flex-col justify-center items-center  h-screen">
@@ -32,25 +44,34 @@ const Login = () => {
           }}
           noValidate
           autoComplete="off"
+          onSubmit={formik.handleSubmit}
         >
-          <TextField id="outlined-basic" label="username" variant="outlined" />
+          <TextField
+            id="outlined-basic"
+            label="username"
+            variant="outlined"
+            name="username"
+            value={formik.values.username}
+            onChange={formik.handleChange}
+            error={formik.touched.username && Boolean(formik.errors.username)}
+            helperText={formik.touched.username && formik.errors.username}
+          />
           <TextField
             id="outlined-password-input"
             label="Password"
             type="password"
             autoComplete="current-password"
+            name="password"
+            value={formik.values.password}
+            onChange={formik.handleChange}
+            error={formik.touched.password && Boolean(formik.errors.password)}
+            helperText={formik.touched.password && formik.errors.password}
           />
           <FormControlLabel
             control={<Checkbox value="remember" color="primary" />}
             label="Remember me"
           />
-          <Button
-            type="submit"
-            fullWidth
-            variant="contained"
-            sx={{ my: 2 }}
-            onClick={handleSignIn}
-          >
+          <Button type="submit" fullWidth variant="contained" sx={{ my: 2 }}>
             Sign In
           </Button>
           <Box>
