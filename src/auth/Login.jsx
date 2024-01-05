@@ -8,10 +8,11 @@ import FormControlLabel from "@mui/material/FormControlLabel";
 import Checkbox from "@mui/material/Checkbox";
 import Button from "@mui/material/Button";
 import Grid from "@mui/material/Grid";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import SignInSchema from "../validation-schemas/SignInSchema";
 
 const Login = () => {
+  const navigate = useNavigate(); //initializing the navigate variable using the useNavigate hook from React Router
   const formik = useFormik({
     initialValues: {
       username: "",
@@ -20,6 +21,7 @@ const Login = () => {
     validationSchema: SignInSchema,
     onSubmit: (values) => {
       console.log(values);
+      navigate("/home");
     },
   });
 
