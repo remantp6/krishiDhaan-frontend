@@ -1,7 +1,10 @@
 import React, { useState } from "react";
 import Title from "./Title";
+import { useNavigate } from "react-router-dom";
 
 const FileUpload = () => {
+  const navigate = useNavigate();
+
   const [selectedFile, setSelectedFile] = useState(null);
 
   const handleFileChange = (event) => {
@@ -17,6 +20,7 @@ const FileUpload = () => {
     } else {
       console.error("No file selected for upload.");
     }
+    navigate("/solution");
   };
   return (
     <>
@@ -32,17 +36,24 @@ const FileUpload = () => {
               className="mt-2 p-2 border border-gray-300 rounded-md"
             />
           </label>
+          {selectedFile && (
+            <div>
+              <img
+                src={URL.createObjectURL(selectedFile)}
+                alt="image"
+                className="w-20 h-auto ms-auto me-auto mt-4"
+              />
+              <p className="mt-2 mb-3 text-green-600">
+                Selected file: {selectedFile.name}
+              </p>
+            </div>
+          )}
           <button
             onClick={handleUpload}
             className="bg-purple-600 text-white py-2 px-4 rounded-md hover:bg-purple-700 focus:outline-none focus:shadow-outline-blue"
           >
             Upload
           </button>
-          {selectedFile && (
-            <p className="mt-4 text-green-600">
-              Selected file: {selectedFile.name}
-            </p>
-          )}
         </div>
       </div>
     </>
