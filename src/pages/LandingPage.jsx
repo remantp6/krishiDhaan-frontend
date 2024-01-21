@@ -1,10 +1,17 @@
 import React from 'react'
+import NavBar from '../components/NavBar'
+import HeroBanner from '../components/HeroBanner'
+import About from '../components/About'
+import Features from '../components/Features'
 
 const LandingPage = () => {
   return (
-    <div>
-      Welcome to landing page!!
-    </div>
+    <>
+      <NavBar/>
+      <HeroBanner/>
+      <About/>
+      <Features/>
+    </>
   )
 }
 
