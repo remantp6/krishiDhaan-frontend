@@ -21,7 +21,7 @@ const Features = () => {
               alt="rice_infected-img"
               className="w-14 h-auto pb-3"
             />
-            <p className="text-purple-800 text-xl font-mono">Cause and Solutions</p>
+            <p className="text-purple-800 text-xl font-mono">Diseases and Solutions</p>
             <p>Provides the cause and solution of the identified diseases</p>
           </div>
           <div className="flex flex-col items-center">

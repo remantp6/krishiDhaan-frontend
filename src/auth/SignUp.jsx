@@ -79,7 +79,7 @@ const SignUp = () => {
           />
 
           <Button type="submit" fullWidth variant="contained" sx={{ my: 2 }}>
-            Sign Up
+            Sign up
           </Button>
           <Box>
             <Grid container justifyContent={"flex-end"}>

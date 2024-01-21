@@ -50,7 +50,7 @@ const Login = () => {
         >
           <TextField
             id="outlined-basic"
-            label="username"
+            label="Username"
             variant="outlined"
             name="username"
             value={formik.values.username}
