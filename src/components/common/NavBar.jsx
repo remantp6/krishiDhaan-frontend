@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Avatar from "../components/ProfileAvatar";
+import Avatar from "../ProfileAvatar";
 
 const NavBar = () => {
   return (
