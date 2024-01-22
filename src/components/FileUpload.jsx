@@ -41,7 +41,7 @@ const FileUpload = () => {
               <img
                 src={URL.createObjectURL(selectedFile)}
                 alt="image"
-                className="w-20 h-auto ms-auto me-auto mt-4"
+                className="w-28 h-auto ms-auto me-auto mt-4"
               />
               <p className="mt-2 mb-3 text-green-600">
                 Selected file: {selectedFile.name}
