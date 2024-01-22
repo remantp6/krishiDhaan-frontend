@@ -17,10 +17,10 @@ const FileUpload = () => {
     if (selectedFile) {
       console.log(`Uploading file: ${selectedFile.name}`);
       // Add your upload logic here, such as using Axios or the Fetch API
+      navigate("/riceLeafInfo");
     } else {
       console.error("No file selected for upload.");
     }
-    navigate("/solution");
   };
   return (
     <>
@@ -37,16 +37,11 @@ const FileUpload = () => {
             />
           </label>
           {selectedFile && (
-            <div>
-              <img
-                src={URL.createObjectURL(selectedFile)}
-                alt="image"
-                className="w-28 h-auto ms-auto me-auto mt-4"
-              />
-              <p className="mt-2 mb-3 text-green-600">
-                Selected file: {selectedFile.name}
-              </p>
-            </div>
+            <img
+              src={URL.createObjectURL(selectedFile)}
+              alt="image"
+              className="w-52 h-52 ms-auto me-auto my-4"
+            />
           )}
           <button
             onClick={handleUpload}
