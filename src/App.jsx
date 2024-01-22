@@ -3,7 +3,7 @@ import Login from "./auth/Login";
 import SignUp from "./auth/SignUp";
 import LandingPage from "./pages/LandingPage";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Solution from "./components/Solution";
+import Solution from "./pages/Solution";
 
 const App = () => {
   return (
