@@ -9,11 +9,10 @@ const NavBar = () => {
         <div className="flex flex-row items-center space-x-24">
           <div className="text-lg">KrishiDhaan</div>
           <div className="space-x-10">
-            <Link to="/home" className="text-red">
-              Home
-            </Link>
-            <Link to="/community">Calendar</Link>
+            <Link to="/home">Home</Link>
             <Link to="/contact">AgroNews</Link>
+            <Link to="/community">Calendar</Link>
+            <Link to="/calculator">FertilizerCalculator</Link>
           </div>
         </div>
         <Avatar />
