@@ -101,7 +101,7 @@ const SignUp = () => {
           >
             {"Copyright © "}
             <Link to="#" className="border-b border-gray-400">
-              Your Website
+              KrishiDhaan
             </Link>{" "}
             {new Date().getFullYear()}
             {"."}
