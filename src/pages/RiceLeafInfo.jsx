@@ -1,6 +1,6 @@
 import React from "react";
 import Layout from "../components/common/Layout";
-import { useLocation } from 'react-router-dom';
+import { useLocation } from "react-router-dom";
 
 const RiceLeafInfo = () => {
   const location = useLocation();
@@ -8,10 +8,25 @@ const RiceLeafInfo = () => {
   return (
     <>
       <Layout>
-        <div className="flex flex-col items-center my-36 max-w-2xl mx-auto py-14 h-96 bg-white rounded-md shadow-md">
-         <img src={state.result.uploadedImageUrl} alt="upload_image" className="w-80 h-auto pb-4"/>
-        <p className="text-lg font-bold">Classification: <span className="text-lg font-normal">{state && state.result.classification}</span> </p>
-        <p className="text-lg font-bold">Confidence: <span className="text-lg font-normal">{state && state.result.confidence}</span></p>
+        <p className="text-center text-2xl mt-24 mb-12">Detection Result</p>
+        <div className="flex flex-col items-center mb-28 max-w-2xl mx-auto py-8 h-96 bg-white rounded-md shadow-md">
+          <img
+            src={state.result.uploadedImageUrl}
+            alt="upload_image"
+            className="w-60 h-auto pb-4"
+          />
+          <p className="text-lg font-bold">
+            Classification:{" "}
+            <span className="text-lg font-normal">
+              {state && state.result.classification}
+            </span>{" "}
+          </p>
+          <p className="text-lg font-bold">
+            Confidence:{" "}
+            <span className="text-lg font-normal">
+              {state && state.result.confidence}
+            </span>
+          </p>
           {/*<img src="path_to_uploaded_image" alt="Rice Leaf" className="mb-4" />
           <p className="text-lg font-bold">Disease: Leaf Disease Name</p>
           <p className="text-sm">
