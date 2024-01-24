@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Avatar from "../ProfileAvatar";
+import ProfileAvatar from "../ProfileAvatar";
 
 const NavBar = () => {
   return (
@@ -15,7 +15,7 @@ const NavBar = () => {
             <Link to="/calculator">FertilizerCalculator</Link>
           </div>
         </div>
-        <Avatar />
+        <ProfileAvatar />
       </nav>
     </>
   );

@@ -1,12 +1,18 @@
 import React from "react";
 import Layout from "../components/common/Layout";
+import { useLocation } from 'react-router-dom';
 
 const RiceLeafInfo = () => {
+  const location = useLocation();
+  const state = location.state;
   return (
     <>
       <Layout>
-        <div className="flex flex-col items-center my-24 max-w-2xl mx-auto p-8 bg-white rounded-md shadow-md">
-          <img src="path_to_uploaded_image" alt="Rice Leaf" className="mb-4" />
+        <div className="flex flex-col items-center my-36 max-w-2xl mx-auto py-14 h-96 bg-white rounded-md shadow-md">
+         <img src={state.result.uploadedImageUrl} alt="upload_image" className="w-80 h-auto pb-4"/>
+        <p className="text-lg font-bold">Classification: <span className="text-lg font-normal">{state && state.result.classification}</span> </p>
+        <p className="text-lg font-bold">Confidence: <span className="text-lg font-normal">{state && state.result.confidence}</span></p>
+          {/*<img src="path_to_uploaded_image" alt="Rice Leaf" className="mb-4" />
           <p className="text-lg font-bold">Disease: Leaf Disease Name</p>
           <p className="text-sm">
             Solution: Recommended solution for the disease
@@ -30,7 +36,7 @@ const RiceLeafInfo = () => {
             the seamless integration of image recognition technology, users can
             simply upload images of affected rice leaves, and our advanced
             algorithms will swiftly analyze and diagnose potential diseases.
-          </p>
+  </p>*/}
         </div>
       </Layout>
     </>

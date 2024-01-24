@@ -1,25 +1,51 @@
 import React, { useState } from "react";
 import Title from "./Title";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
 const FileUpload = () => {
   const navigate = useNavigate();
 
   const [selectedFile, setSelectedFile] = useState(null);
+  const [result, setResult] = useState(null);
 
   const handleFileChange = (event) => {
     const file = event.target.files[0];
     setSelectedFile(file);
+    setResult(null); // Reset result when a new file is selected
+    // console.log(file);
   };
 
-  const handleUpload = () => {
-    // Perform upload logic here (e.g., send the file to a server)
-    if (selectedFile) {
-      console.log(`Uploading file: ${selectedFile.name}`);
-      // Add your upload logic here, such as using Axios or the Fetch API
-      navigate("/riceLeafInfo");
-    } else {
-      console.error("No file selected for upload.");
+  const handleUpload = async () => {
+    if (!selectedFile) {
+      // console.error("No file selected for upload.");
+      alert("No file selected for upload.");
+      return;
+    }
+
+    const formData = new FormData();
+    formData.append("image", selectedFile);
+
+    try {
+      const response = await axios.post(
+        "http://127.0.0.1:8000/classification/classify/",
+        formData
+      );
+
+      if (response.status === 200) {
+        const data = response.data;
+        // setResult(data);
+        //navigate("/riceLeafInfo", { state: { result: data } }); // Navigate to the next page if needed
+        const uploadedImageUrl = URL.createObjectURL(selectedFile);
+        setResult({ ...data, uploadedImageUrl });
+        navigate("/riceLeafInfo", {
+          state: { result: { ...data, uploadedImageUrl } },
+        });
+      } else {
+        console.error("Failed to upload file.");
+      }
+    } catch (error) {
+      console.error("Error during file upload:", error);
     }
   };
   return (
