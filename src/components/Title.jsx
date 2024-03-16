@@ -1,11 +1,14 @@
-import React from 'react'
+import React from "react";
+import Fade from "./animation/Fade";
 
-const Title = ({title}) => {
+const Title = ({ title }) => {
   return (
     <>
-      <p className='text-2xl text-purple-800'>{title}</p>
+      <Fade direction="down" delay={0.2}>
+        <p className="text-3xl font-semibold text-white">{title}</p>
+      </Fade>
     </>
-  )
-}
+  );
+};
 
-export default Title
+export default Title;
