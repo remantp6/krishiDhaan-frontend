@@ -28,7 +28,7 @@ const UserHistory = () => {
   return (
     <Layout>
       <div className="relative">
-        <p className="text-center text-white text-2xl mt-20 pb-16 font-semibold">
+        <p className="text-center text-white text-2xl mt-20 pb-20 font-semibold">
           Diagnosis History
         </p>
         <div className="key={index} flex flex-col items-center max-w-2xl mb-4 mx-auto h-auto text-slate-100 rounded-md">
