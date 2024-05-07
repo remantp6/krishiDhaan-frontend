@@ -72,7 +72,7 @@ const UserHistory = () => {
                         </span>
                       </p>
                       <p className="text-lg font-bold text-justify">
-                        <p className="pb-1">Understanding Leaf Scald:</p>
+                        <p className="pb-1">Understanding Diseases:</p>
                         <span className="text-lg font-normal">
                           {item.description}
                         </span>

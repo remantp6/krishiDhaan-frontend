@@ -31,7 +31,7 @@ const RiceLeafInfo = () => {
           </span>
         </p>
         <p className="text-lg font-bold text-justify">
-          <p className="pb-1">Understanding Leaf Scald:</p>
+          <p className="pb-1">Understanding Disease:</p>
           <span className="text-lg font-normal">
             {state && state.result.description}
           </span>
