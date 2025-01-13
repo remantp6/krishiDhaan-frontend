@@ -19,3 +19,14 @@ This web application serves as a final year project, leveraging advanced technol
 - **Authentication**: JWT (JSON Web Tokens)
 - **Database**: MySQL
 - **Machine Learning Model**: VGG16 (Fine-tuned)
+
+## Folder structure
+  ```
+  |-src
+  |-assets/
+  |-auth/
+  |-components/
+  |-pages/
+  |-utils
+  |-validation-schemas/
+  ```
