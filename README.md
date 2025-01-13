@@ -1,8 +1,21 @@
-# React + Vite
+# Rice Leaf Diagnosis Web Application
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This web application serves as a final year project, leveraging advanced technologies to diagnose rice leaf diseases. It integrates modern frontend frameworks, backend services, and machine learning models to provide accurate and user-friendly diagnostics.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **User Authentication**: Implemented secure user authentication using REST API to manage user sessions.
+- **Protected Routes**: Restricted access to specific parts of the application to authenticated users only.
+- **Persistent User Data**: Used cookies to retain user profile information across sessions.
+- **User History**: Tracked and displayed the history of rice leaf diagnosis for each user.
+- **Image Classification**: Utilized a pre-trained and fine-tuned VGG16 model to classify rice leaf images.
+- **Diagnosis Confidence**: Provided users with the confidence percentage of each diagnosis.
+- **Recommendations**: Suggested solutions based on the model’s predictions.
+
+## Technologies Used
+
+- **Frontend**: React, Tailwind CSS
+- **Backend**: REST API, Django
+- **Authentication**: JWT (JSON Web Tokens)
+- **Database**: MySQL
+- **Machine Learning Model**: VGG16 (Fine-tuned)
