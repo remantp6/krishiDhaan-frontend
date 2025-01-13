@@ -1,4 +1,4 @@
-# Rice Leaf Diagnosis Web Application
+# KrishiDhaan
 
 This web application serves as a final year project, leveraging advanced technologies to diagnose rice leaf diseases. It integrates modern frontend frameworks, backend services, and machine learning models to provide accurate and user-friendly diagnostics.
 
